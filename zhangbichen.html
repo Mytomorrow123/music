@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>播放列表</title>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/zhangjie.css"/>
+</head>
+<body>
+<audio src="" ></audio>
+<div data-role="page" data-theme="b">
+    <!--头部开始-->
+    <div data-role="header" class="top"  data-position="fixed">
+        <h1>歌曲</h1>
+        <a href="vocalist.html">返回</a>
+        <a href="index.html">首页</a>
+    </div>
+    <!--头部结束-->
+
+    <!--内容开始-->
+    <div data-role="content">
+        <div class="introduce">
+            <img src="img/bichen.jpg" class="left" alt=""/>
+            <div class="int left">
+                <h2>张碧晨</h2>
+                <h3>代表作：《年轮》、《凉凉》、《一吻之间》...</h3>
+                <ul class="intul">
+                    <li>单曲 <span> 91</span></li>
+                    <li>专辑 <span> 16</span></li>
+                    <li>MV <span> 83</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="float"></div>
+        <ul data-role="listview" data-inset="true" class="main-top">
+            <li >
+                <a href="">
+                    <h2>这，就是爱</h2>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!--内容结束-->
+
+    <!--脚部开始-->
+    <div data-role="footer" data-position="fixed">
+        <h2 class="dang"></h2>
+        <div data-position="fixed" data-role="navbar">
+            <ul class="button">
+                <li class="next"><a href="" >上一曲</a></li>
+                <li class="fang"><a href="" >播放</a></li>
+                <li class="ting"><a href="" >暂停</a></li>
+                <li class="prev"><a href="">下一曲</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--脚部结束-->
+</div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.min.js"></script>
+<script>
+
+    var music=[{
+        src: 'http://dl.stream.qqmusic.qq.com/C400001CkBs10UxKxc.m4a?vkey=926B523E24FD2385B909294294C3CCDB96EABEE180BD5F0DDF6540B6FF2CF9FE7631F322C63688EF4FAB4BC8A3F7B8243C4BF6D08FB756F1&guid=6785287486&uin=0&fromtag=66',
+        song: '凉凉'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400001q62Bb1xCTx7.m4a?vkey=6BA0DB0563D4F26CEE970819B429FD683035915466E505B846F057D96622480531B5052EB944C424107F9D03CBB7DC2F0882E72C085D0A4C&guid=6785287486&uin=0&fromtag=66',
+        song: '年轮'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400000WBOXF0UMPjy.m4a?vkey=C95ECD7DCB255F245792254B880B32F622A4B87E40F8D46F7A5EFF5B4D50F54A3ECF1A0AFF87E8042E394DE88C5DC9DA5DD98C9EA6EF512B&guid=6785287486&uin=0&fromtag=66',
+        song: '不要忘记我爱你'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400003jupDJ4Dbwxa.m4a?vkey=C3AE9702317ADAE3EADF249FAFF2F69E35B951E18A173DB3E5E655AD9A39C116A45CA7F59048AF4F4BCDED83D6374B5B3E83CFB2950C8F81&guid=6785287486&uin=0&fromtag=66',
+        song: '一吻之间'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C4000003ntQn0lNU2h.m4a?vkey=1E3BCDEADB64923CACABDB7686827F005A9B7F58C9AA7705263599444097A3345CD2B819ADF80793ABDBF53649A9949D57D4214AA45040A4&guid=6785287486&uin=0&fromtag=66',
+        song: '下一秒'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400003dl5YQ1Jyg27.m4a?vkey=7C149075A9AE1E4F98BFB8A6B0A6FC1658860C9A1D0393087F45CAE4DFA082C4D45F41ECF27F5D8AF6EE899A9853A52044F5527AAA82F310&guid=6785287486&uin=0&fromtag=66',
+        song: '一半一半'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400003uB0Lh0pexs8.m4a?vkey=B99E30B5B1D3DD24AA3A72F4AB3365F45CCC2283DB867DA6A520809150A5C22696E6558B798FB5C34D640AB2891275EBC4B1599A3AAA9F67&guid=6785287486&uin=0&fromtag=66',
+        song: '望'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400003Zet7f2XDXt2.m4a?vkey=62AED652806D3BBFF38AABFFA719FE9C186C5FF2428DA52F056267628BE451215D2B342308BC5B39212A749E954FBE496550E7B61FB576DB&guid=6785287486&uin=0&fromtag=66',
+        song: '你给我听好了'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400002xpVsL3HvA0Z.m4a?vkey=43D9B2D2CDBB48674DE5703FA9CC3B9C82FEF0A5E8B995B2201954FD8E22E60C9AF3D8F6117D4F80878B229F25CD48BBE091251B507B2F04&guid=6785287486&uin=0&fromtag=66',
+        song: '红玫瑰'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400000u5Sd23ujqrV.m4a?vkey=24E8B1E9EC1C06826C04F7ED40E1E028B55B0513FFE0DB9CF4B0AF74543CE1222278DC2F6A3B0F5BEA0E0C7B3AAF8B0A1CF1B27AC22F618F&guid=6785287486&uin=0&fromtag=66',
+        song: '时间有泪'
+    }];
+
+
+    var audio = document.querySelector('audio');
+
+    var pic = document.querySelector('.pic');
+    var song = document.querySelector('.song');
+    var singer = document.querySelector('.singer');
+    var old = document.querySelector('.old');
+    var newTime = document.querySelector('.new');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    var yuan = document.querySelector('.yuan');
+    var line = document.querySelectorAll('.line');
+    var dang = document.querySelector('.dang');
+
+
+
+    var str = '';
+    var index=0;
+    for(var i = 0; i < music.length; i++){
+        str += '<li><a href=""><h2>'+music[i].song+'</h2></a></li>';
+    }
+    $('.main-top').html(str);
+
+    function init(index){
+        audio.src = music[index].src;
+        dang.innerHTML = music[index].song;
+    }
+
+    init(index);
+
+
+
+    //        上一曲 和 下一曲
+    $('.prev').on('tap',function () {
+        index++;
+        index = index > 4 ? 0 : index;
+        init(index);
+        audio.play();
+
+    });
+    $('.next').on('tap',function () {
+        index--;
+        index = index < 0 ? 4 : index;
+        init(index);
+        audio.play();
+
+    });
+
+
+    audio.addEventListener('ended',function () {
+        if(audio.ended){
+            index++;
+            index = index > 4 ? 0 : index;
+            init(index);
+            audio.play();
+        }
+    });
+
+
+    //    canplay 当前歌曲准备播放完成就会触发canplay事件
+    audio.addEventListener('canplay',function(){
+
+
+        $('.main-top li').on('taphold',function(){
+            index=$(this).index();
+            init(index);
+//            audio.paused当音频正在播放的时候返回false 除以暂停状态返回true
+            if(audio.paused){
+//                播放音乐
+                audio.play();
+            }
+        });
+        $('.fang').on('tap',function(){
+            init(index);
+            if(audio.paused){
+//                播放音乐
+                audio.play();
+            }
+        });
+
+        $('.ting').on('tap',function(){
+            if(!audio.paused){
+                audio.pause();
+            }
+
+        });
+
+    });
+
+</script>
+</html>

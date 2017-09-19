@@ -1,0 +1,75 @@
+html {
+    font-size: 16px;
+}
+.ui-header .ui-title{
+    font-size: 2.5rem;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+.re {
+    font-size: 2.2rem;
+    margin-left: 40px;
+}
+.cha{
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.8rem;
+    padding: 20px;
+    color: #fff;
+}
+
+.lun-ul{
+    margin-left: -20px;
+}
+.lun-ul > li {
+    width: 300px;
+    height: 350px;
+    margin-top: 60px;
+    float: left;
+}
+.lun-ul > li > a > img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 25px;
+}
+.lun-ul > li > a  > h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+ .ui-listview>li h2 {
+    font-size: 2em;
+    font-weight: 700;
+    display: block;
+    margin: .45em 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset {
+    margin: 2rem;
+}
+
+
+.ui-navbar li .ui-btn {
+    font-size: 2rem;
+    display: block;
+    margin: 0;
+    border-right-width: 0;
+}

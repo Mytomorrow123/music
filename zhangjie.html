@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>播放列表</title>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/zhangjie.css"/>
+</head>
+<body>
+<audio src="" ></audio>
+<div data-role="page" data-theme="b">
+    <!--头部开始-->
+    <div data-role="header" class="top"  data-position="fixed">
+        <h1>歌曲</h1>
+        <a href="vocalist.html">返回</a>
+        <a href="index.html">首页</a>
+    </div>
+    <!--头部结束-->
+
+    <!--内容开始-->
+    <div data-role="content">
+        <div class="introduce">
+            <img src="img/zhangjie.jpg" class="left" alt=""/>
+            <div class="int left">
+                <h2>张杰</h2>
+                <h3>代表作：《这，就是爱》、《勿忘心安》、《明天过后》...</h3>
+                <ul class="intul">
+                    <li>单曲 <span> 301</span></li>
+                    <li>专辑 <span> 31</span></li>
+                    <li>MV <span> 278</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="float"></div>
+        <ul data-role="listview" data-inset="true" class="main-top">
+            <li >
+                <a href="">
+                    <h2>这，就是爱</h2>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!--内容结束-->
+
+    <!--脚部开始-->
+    <div data-role="footer" data-position="fixed">
+        <h2 class="dang"></h2>
+        <div data-position="fixed" data-role="navbar">
+            <ul class="button">
+                <li class="next"><a href="" >上一曲</a></li>
+                <li class="fang"><a href="" >播放</a></li>
+                <li class="ting"><a href="" >暂停</a></li>
+                <li class="prev"><a href="">下一曲</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--脚部结束-->
+</div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.min.js"></script>
+<script>
+
+    var music=[{
+        src: 'http://dl.stream.qqmusic.qq.com/C400000hscqh1l8UlG.m4a?vkey=52AB841656A8890AF69AE47E0550D3C257A892C29FF11D929B365241F36D2E75EA8C863F814761998692A57274703F6E19FFE35736205AA9&guid=6785287486&uin=0&fromtag=66',
+        song: '三生三世'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400000KvMZk12yUC2.m4a?vkey=31B42AF548942C0A6A822B6E7DCAE5FAF24A2038097D0FA0F29C9651F1E85B72B12D4641CF96EDFCB9177AB35D2DB645314916825DF90B94&guid=6785287486&uin=0&fromtag=66',
+        song: 'Torches'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C4000016QvHh2d3agi.m4a?vkey=32D933A3457D92479869932112DD852C7788A2CB830C945607D134C71AA4504C2C148B6CA577B3EB67AE849984CD45FEAB3F8333601B1754&guid=6785287486&uin=0&fromtag=66',
+        song: '这，就是爱'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400003iscmh3SAgHD.m4a?vkey=2BF0E4848F83EA2BDA7961245961EBFE255ADBA57E52DEFB1D8CEE6C4F7EC70DC2E3933EDD20182920338A4C3A5F6A51BADC9A1629FC63D4&guid=6785287486&uin=0&fromtag=66',
+        song: '他不懂'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400002u5kez1Ikr2F.m4a?vkey=0ABE88069BB2E32DF4E897EDB22506326189B81D1B43926C716342A412FBDF11431592BD83C04B2C2AE0811ADBA7F68CE22FE6D889C74364&guid=6785287486&uin=0&fromtag=66',
+        song: '明天过后'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400002PjXf83702Lk.m4a?vkey=970BC27CEDB6F2E407AD3A6056D2D777847180E723F0AA929D5CA71589A6D5B92B0BCB1D3520FB7B784CC4FC30FA9A5CFF6910D2A25079A9&guid=6785287486&uin=0&fromtag=66',
+        song: '天下'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400001UMfxJ1WsCPY.m4a?vkey=A6700265BE3F195D3338FEB9B350E8296DA8105585CEBD70C3EA315748805E2FDC5E761A4F960AA71691EC06E6B29A64E871F851910A28BF&guid=6785287486&uin=0&fromtag=66',
+        song: '我们都一样'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400002L7L5u1nxGHo.m4a?vkey=65A1167F2C5CBDC5FDA4218F1E95ACBDE39A00E3C5FA90B1818735D72A53F052378B206B981C5DCEC20CE879EC937AAD85F121A03646FFF3&guid=6785287486&uin=0&fromtag=66',
+        song: '越爱越强'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400002ljdEP1dGTDX.m4a?vkey=554BB0476529677D51ACC23CE28F363298A2105D782DF29BFB16FDB6470FDD32A3C9D3337F4446CC42D8C6887ABCB95AC74CC48E9DD2EBC5&guid=6785287486&uin=0&fromtag=66',
+        song: '会孤单'
+    },{
+        src:'http://dl.stream.qqmusic.qq.com/C400001RdTuq0aarsS.m4a?vkey=694919E45A343B49C2E4AF8C412D4F378CD07E4334891CEE47F0678AD5BEFD5AAB7A700A031F239D74E925267FC1F0E95CA9C3F238663DD2&guid=6785287486&uin=0&fromtag=66',
+        song: '逆战'
+    }];
+
+
+    var audio = document.querySelector('audio');
+
+    var pic = document.querySelector('.pic');
+    var song = document.querySelector('.song');
+    var singer = document.querySelector('.singer');
+    var old = document.querySelector('.old');
+    var newTime = document.querySelector('.new');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
+    var yuan = document.querySelector('.yuan');
+    var line = document.querySelectorAll('.line');
+    var dang = document.querySelector('.dang');
+
+
+
+    var str = '';
+    var index=0;
+    for(var i = 0; i < music.length; i++){
+        str += '<li><a href=""><h2>'+music[i].song+'</h2></a></li>';
+    }
+    $('.main-top').html(str);
+
+    function init(index){
+        audio.src = music[index].src;
+        dang.innerHTML = music[index].song;
+    }
+
+    init(index);
+
+
+
+    //        上一曲 和 下一曲
+    $('.prev').on('tap',function () {
+        index++;
+        index = index > 4 ? 0 : index;
+        init(index);
+        audio.play();
+
+    });
+    $('.next').on('tap',function () {
+        index--;
+        index = index < 0 ? 4 : index;
+        init(index);
+        audio.play();
+
+    });
+
+
+    audio.addEventListener('ended',function () {
+        if(audio.ended){
+            index++;
+            index = index > 4 ? 0 : index;
+            init(index);
+            audio.play();
+        }
+    });
+
+
+    //    canplay 当前歌曲准备播放完成就会触发canplay事件
+    audio.addEventListener('canplay',function(){
+
+
+        $('.main-top li').on('taphold',function(){
+            index=$(this).index();
+            init(index);
+//            audio.paused当音频正在播放的时候返回false 除以暂停状态返回true
+            if(audio.paused){
+//                播放音乐
+                audio.play();
+            }
+        });
+        $('.fang').on('tap',function(){
+            init(index);
+            if(audio.paused){
+//                播放音乐
+                audio.play();
+            }
+        });
+
+        $('.ting').on('tap',function(){
+            if(!audio.paused){
+                audio.pause();
+            }
+
+        });
+
+    });
+
+
+
+
+
+
+</script>
+</html>

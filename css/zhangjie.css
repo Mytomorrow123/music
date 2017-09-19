@@ -1,0 +1,193 @@
+html {
+    font-size: 16px;
+}
+.ui-header .ui-title{
+    font-size: 2.5rem;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.float{
+    clear: both;
+    overflow: hidden;
+    height:0;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.re {
+    font-size: 2.2rem;
+    margin-left: 40px;
+}
+.ui-listview>li h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin: .45rem 8rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ui-header .ui-btn-left, .ui-header .ui-btn-right {
+    font-size: 2rem;
+}
+
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset {
+    margin: 1rem;
+}
+.title li{
+    position: relative;
+}
+
+
+
+.main-top>li p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    display: block;
+    margin: 1em 9rem;
+}
+
+
+.main-top .ui-li-has-thumb>img:first-child,
+.main-top .ui-li-has-thumb>.ui-btn>img:first-child,
+.ui-listview .ui-li-has-thumb .ui-li-thumb {
+    position: absolute;
+    left: 0.8rem;
+    top: 0.5rem;
+    max-height: 11rem;
+    max-width: 11rem;
+}
+.ui-listview>.ui-li-static {
+    padding: 0.9rem 1rem;
+}
+.ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb {
+    min-height: 10.625rem;
+    padding-left: 6.25rem;
+}
+
+
+.ui-navbar li .ui-btn {
+    font-size: 2rem;
+    display: block;
+    margin: 0;
+    border-right-width: 0;
+}
+
+
+
+.ui-listview>li h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin: .45rem 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/*简介开始*/
+.introduce{
+    width: 100%;
+}
+.introduce img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.introduce .int{
+    width: 500px;
+    height: 300px;
+    margin-left: 30px;
+}
+.introduce .int h2{
+    font-size: 2rem;
+}
+.introduce .int h3{
+    font-size: 1.8rem;
+}
+.intul{
+    width: 500px;
+    height: 40px;
+    margin-left: -47px;
+}
+.intul li{
+
+    float: left;
+    font-size: 1.8rem;
+    padding: 10px;
+}
+.intul li span{
+    font-size: 2rem;
+}
+/*简介结束*/
+
+/*歌曲列表*/
+
+.dang{
+    font-size: 2rem;
+}
+
+
+ .ui-footer .ui-title {
+    font-size: 2rem;
+    min-height: 1.1em;
+    text-align: center;
+    display: block;
+    margin: 0 30%;
+    padding: .7em 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0!important;
+}
+
+
+ /*线*/
+ .control{
+     width: 600px;
+     height: 10px;
+     background: #e4393c;
+     margin: 10px 0 40px 20px;
+ }
+
+
+
+
+
+
+
+ /*底部*/
+.button{
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+.button li{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top:0;
+}
+.button li:nth-child(1){
+    left: 0;
+}
+.button li:nth-child(2){
+    left: 38%;
+}
+.button li:nth-child(3){
+    left: 38%;
+}
+.button li:nth-child(4){
+    left: 74%;
+}
+
